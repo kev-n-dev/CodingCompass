@@ -23,4 +23,4 @@ Stay connected and follow my journey on:
 
 ## License
 
-This repository is licensed under the [Creative Commons Attribution 4.0 International License (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
+This repository is licensed under the [Creative Commons Attribution CC0 1.0 Universal](https://github.com/coding-corps/CodingCompass?tab=CC0-1.0-1-ov-file#readme).
