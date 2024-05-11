@@ -19,7 +19,7 @@ I value your feedback! If you have any suggestions, ideas, or comments regarding
 Stay connected and follow my journey on:
 
 - [LinkedIn](https://www.linkedin.com/in/kevin-christopher-7537007a/)
-- [Personal Website](https://www.codingcorps.com)
+- [Personal Website](https://coding-corps.github.io/CodingCompass/)
 
 ## License
 
