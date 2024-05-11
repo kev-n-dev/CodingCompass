@@ -1,14 +1,15 @@
 // BlogsPage.js
 import React from 'react';
-import IconSideNav from '../ui/SideNavBar';
+import IconSideNav from '../ui/navigation/SideNavBar';
+import Blog from '../ui/blogs/Blog';
 
 const BlogsPage = () => {
     return (
         <div>
             <IconSideNav></IconSideNav>
-            <h1>Latest Blogs</h1>
-            <p>List of latest blog posts goes here...</p>
-        </div>
+
+            <Blog title={"test"} author={"kevin"} content={"loren epsum"}></Blog>
+         </div>
     );
 }
 

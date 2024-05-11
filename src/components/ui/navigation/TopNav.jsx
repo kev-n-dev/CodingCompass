@@ -1,9 +1,9 @@
 // Navbar.js
 import React from 'react';
 import { Link, Routes, Route } from 'react-router-dom';
-import HomePage from '../pages/HomePage';
-import BlogsPage from '../pages/BlogsPage';
-import AboutPage from '../pages/AboutPage';
+import HomePage from '../../pages/HomePage';
+import BlogsPage from '../../pages/BlogsPage';
+import AboutPage from '../../pages/AboutPage';
 import './TopNav.css'; // Import CSS file for styling
 const Navbar = () => {
     return (

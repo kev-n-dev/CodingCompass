@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom'; // Import BrowserRouter
 import './App.css';
-import Navbar from './components/ui/TopNav';
+import Navbar from './components/ui/navigation/TopNav';
 
 function App() {
   return (
