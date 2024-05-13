@@ -19,11 +19,7 @@ const Navbar = () => {
                     <Link to="/about" className="nav-link">About</Link>
                 </li>
             </ul>
-            <Routes>
-                <Route path="/CodingCompass" element={<HomePage />} />
-                <Route path="/blogs" element={<BlogsPage />} />
-                <Route path="/about" element={<AboutPage />} />
-            </Routes>
+          
         </nav>
     );
 }
