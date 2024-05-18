@@ -5,7 +5,7 @@ import '../src/components/assets/css/base.scss'
 import HomePage from './components/pages/HomePage';
 import BlogsPage from './components/pages/BlogsPage';
 import AboutPage from './components/pages/AboutPage';
-import Navigation from './components/ui/navigation/Navigation';
+import Navigation from './components/Navigation';
 import NotFoundPage from './components/pages/notFound';
 
 function App() {

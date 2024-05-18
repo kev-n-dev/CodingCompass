@@ -1,18 +1,36 @@
 @import './variables';
-
+ 
 .site-navigation {
-    height: 65px!important;
-    width: 100%!important;
-    display: flex!important;
-    justify-content: space-between!important;
-    color: $textColor!important;
-    position: relative!important; /* or sticky, depending on the desired behavior */
-    top: 1%!important;
 
-    border-radius: 10px!important;
-    background: $NeoMorphBg!important;
-    box-shadow:  20px 20px 60px #bebebe!important,
-                 -20px -20px 60px #ffffff!important;
+    display: flex !important;
+    justify-content: space-between !important;
+    color: $textColor !important;
+    /* Replace $textColor with actual color value */
+    position: absolute !important;
+    /* or sticky, depending on the desired behavior */
+    border-radius: 2.5em!important;
+    justify-content: center!important;
+    transition: all .3s!important;
+    border-radius: 2.5em!important;
+    margin:0 auto!important;
+    background: linear-gradient(145deg, #cacaca, #f0f0f0) !important;
+    ;
+    box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff!important;
+
+
+
+
+    align-items: center !important;
+    width: 96% !important;
+    margin-left: 2% !important;
+    margin-right: 2% !important;
+    height: 8% !important;
+
+
+    color: $textColor !important;
+    /* or sticky, depending on the desired behavior */
+    top: 1% !important;
+
 
     span {
         font-size: 30px;
@@ -22,18 +40,19 @@
         font-weight: 400;
 
     }
+
     a {
-        text-decoration: none!important;
-        padding: 0 20px 0 20px!important;
-         color: $textColor!important;
+        text-decoration: none !important;
+        padding: 0 20px 0 20px !important;
+        color: $textColor !important;
 
 
 
-        &:hover{
-            color: $text-link!important;
+        &:hover {
+            color: $text-link !important;
         }
 
     }
-    
- 
+
+
 }

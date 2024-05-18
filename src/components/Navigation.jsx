@@ -1,6 +1,3 @@
- 
-
-
 
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
@@ -11,11 +8,10 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
+ 
+import   MyIcon  from './assets/images/icons/logo.svg';
 
 const pages = [{title:'Home', link:'/CodingCompass/'},
  {title:'About', link:'/CodingCompass/about'},
@@ -41,12 +37,14 @@ function Navigation() {
     setAnchorElUser(null);
   };
 
-  return (
-    <AppBar className="site-navigation" position="static">
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
-          <Typography
+ 
+   return (
+    <div className="navigation-container">
+
+    <AppBar className="site-navigation" >
+      <Container  maxWidth="xl">
+        <Toolbar  disableGutters>
+          <Typography 
             variant="h6"
             noWrap
             component="a"
@@ -61,6 +59,8 @@ function Navigation() {
               textDecoration: 'none',
             }}
           >
+                    <img src={MyIcon} alt="My Icon"   />
+
             Coding Compass
           </Typography>
 
@@ -100,7 +100,6 @@ function Navigation() {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Typography
             variant="h5"
             noWrap
@@ -117,6 +116,8 @@ function Navigation() {
               textDecoration: 'none',
             }}
           >
+                      <img src={MyIcon} alt="My Icons"   />
+
             CC
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
@@ -133,11 +134,11 @@ function Navigation() {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
+            {/* <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                {/* <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" /> */}
+                <Avatar alt="Coding corps Sharp" src="/static/images/avatar/2.jpg" />
               </IconButton>
-            </Tooltip>
+            </Tooltip> */}
             <Menu
               sx={{ mt: '45px' }}
               id="menu-appbar"
@@ -164,6 +165,7 @@ function Navigation() {
         </Toolbar>
       </Container>
     </AppBar>
+    </div>
   );
 }
 export default Navigation;

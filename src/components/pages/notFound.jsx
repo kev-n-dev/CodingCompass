@@ -1,13 +1,16 @@
-// src/components/pages/NotFoundPage.js
-import React from 'react';
+import img from '../assets/images/static/404_bg.png'
+import   MyIcon  from '../assets/images/static/logo.png';
 
 const NotFoundPage = () => {
-  return (
-    <div>
-      <h1>404 - Page Not Found</h1>
-      <p>Sorry, the page you are looking for does not exist.</p>
-    </div>
-  );
+
+
+    return (
+        <div className='not-found-page'>
+
+            <h1 className='message-404'>Not-Found</h1>
+ 
+        </div>
+    );
 };
 
 export default NotFoundPage;
