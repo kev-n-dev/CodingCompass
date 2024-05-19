@@ -15,10 +15,10 @@ function App() {
     <Router>
       <Navigation />
       <Routes>
-        <Route path="/CodingCompass/" element={ <HomePage />}/>
-        <Route path="/CodingCompass/#blogs" element={<BlogsPage />}/>
-        <Route path="/CodingCompass/#about"element={<AboutPage />}/>
-        <Route path="/CodingCompass/*" element={<NotFoundPage />} /> 
+      <Route path="/" element={<HomePage />} />
+        <Route path="/blogs" element={<BlogsPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="*" element={<NotFoundPage />} /> 
       </Routes>
     </Router>
   );
