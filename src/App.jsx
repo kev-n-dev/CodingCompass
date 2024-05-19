@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import '../src/components/assets/css/base.scss'
 import HomePage from './components/pages/HomePage';
@@ -15,9 +15,9 @@ function App() {
     <Router>
       <Navigation />
       <Routes>
-        <Route path="/CodingCompass" element={ <HomePage />}/>
-        <Route path="/CodingCompass/blogs" element={<BlogsPage />}/>
-        <Route path="/CodingCompass/about"element={<AboutPage />}/>
+        <Route path="/" element={ <HomePage />}/>
+        <Route path="/blogs" element={<BlogsPage />}/>
+        <Route path="/about"element={<AboutPage />}/>
         <Route path="*" element={<NotFoundPage />} /> 
       </Routes>
     </Router>

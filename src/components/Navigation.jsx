@@ -13,9 +13,9 @@ import MenuItem from '@mui/material/MenuItem';
  
 import   MyIcon  from './assets/images/icons/logo.svg';
 
-const pages = [{title:'Home', link:'/CodingCompass/'},
- {title:'About', link:'/CodingCompass/about'},
-  {title:'Blog', link:'/CodingCompass/blogs'}];
+const pages = [{title:'Home', link:'/'},
+ {title:'About', link:'/#about'},
+  {title:'Blog', link:'/#blogs'}];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function Navigation() {
