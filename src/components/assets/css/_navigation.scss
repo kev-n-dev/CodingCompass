@@ -6,8 +6,7 @@
     justify-content: space-between !important;
     color: $textColor !important;
     /* Replace $textColor with actual color value */
-    position: absolute !important;
-    /* or sticky, depending on the desired behavior */
+     /* or sticky, depending on the desired behavior */
     border-radius: 2.5em!important;
     justify-content: center!important;
     transition: all .3s!important;
@@ -16,28 +15,21 @@
     background: linear-gradient(145deg, #cacaca, #f0f0f0) !important;
     ;
     box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff!important;
+    left: 0!important;
+    margin-top: 1%!important;
+     align-items: center !important;
 
-
-
-
-    align-items: center !important;
-    width: 96% !important;
-    margin-left: 2% !important;
-    margin-right: 2% !important;
-    height: 8% !important;
-
+    
 
     color: $textColor !important;
     /* or sticky, depending on the desired behavior */
-    top: 1% !important;
 
 
     span {
         font-size: 30px;
         display: flex;
         align-items: center;
-        margin-left: 40px;
-        font-weight: 400;
+         font-weight: 400;
 
     }
 

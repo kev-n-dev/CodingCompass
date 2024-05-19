@@ -9,9 +9,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Header from '../Header';
 import MainFeaturedPost from './MainFeaturedPost';
 import FeaturedPost from './FeaturedPost';
-import Sidebar from '../Sidebar';
 import Footer from '../Footer';
-import Main from '../Main';
 
 
 const sections = [
@@ -60,10 +58,9 @@ export default function Blog({ posts }) {
   const theRest = posts.filter(post => !post.feature && !post.mainFeature);
 
    return (
-    <ThemeProvider theme={defaultTheme}>
-       <Container maxWidth="lg">
-       <br></br>
-       <br></br>
+    <ThemeProvider  theme={defaultTheme}>
+       <Container className='bloggingWindow' maxWidth="lg">
+ 
         <Header title="Coding Compass Adventure Log" sections={sections} />
        
         <main>
@@ -80,12 +77,7 @@ export default function Blog({ posts }) {
             ))}
           </Grid>
         </main>
-          <Grid container spacing={5} sx={{ mt: 3 }}>
-            <Main title="latest posts:" posts={posts} />
-             
-          </Grid>
 
-       
       </Container>
       <Footer
         title="Footer"
