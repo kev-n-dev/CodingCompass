@@ -61,8 +61,9 @@ export default function Blog({ posts }) {
 
    return (
     <ThemeProvider theme={defaultTheme}>
-      <CssBaseline />
-      <Container maxWidth="lg">
+       <Container maxWidth="lg">
+       <br></br>
+       <br></br>
         <Header title="Coding Compass Adventure Log" sections={sections} />
        
         <main>

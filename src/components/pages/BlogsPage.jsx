@@ -68,8 +68,6 @@ const posts = [
 const BlogsPage = () => {
     return (
         <>
-
-
       <Blog
       posts={posts} />
       </>
