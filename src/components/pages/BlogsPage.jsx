@@ -11,7 +11,7 @@ import react2githubImg  from  '../assets/images/blog_images/reactDeploy.png';
 
 
 import react_router from '../assets/logs/routing.md';
-import post3Image  from  '../assets/images/blog_images/react-router.png';
+import post3Image  from  '../assets/images/blog_images/router_path.png';
 
  
 const posts = [
