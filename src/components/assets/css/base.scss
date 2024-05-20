@@ -7,34 +7,17 @@ body {
   font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-weight: 500;
   margin: 0;
-  background-color: $NeoMorphBg !important;
+  background-color: $light_shades !important;
 }
 
 
 .blogspage {
   padding: 10%;
-
-  .filterbar {
-    font-size: smaller !important;
-    
-    height: fit-content !important;
-    ;
-    color: $textColor !important;
-    background-color: $NeoMorphBg !important;
-     justify-content: space-between !important;
-
-     box-shadow: none!important;
-
-
-    Button {
-      margin: 1%;
-      border-radius: 9px;
-       background: linear-gradient(145deg, #cacaca, #f0f0f0);
-      box-shadow:  9px 9px 18px #727272,
-                   -9px -9px 18px #ffffff;
-    }
-
+  .filterButton{
+    color: $main_brand_color;
+    border-color: $dark_accent!important;
   }
+  
 }
 
 .not-found-page {
@@ -84,9 +67,6 @@ body {
   color: $textColor !important;
   /* or sticky, depending on the desired behavior */
 
-   border-radius: 1px!important;
-  background: linear-gradient(145deg, #cacaca, #f0f0f0)!important;
-  box-shadow: inset 5px 5px 10px #9d9d9d,
-  inset -5px -5px 10px #ffffff!important;
+ 
 
 }

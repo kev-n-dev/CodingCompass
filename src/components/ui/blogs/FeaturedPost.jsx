@@ -6,8 +6,8 @@ import Card from '@mui/material/Card';
 import CardActionArea from '@mui/material/CardActionArea';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-
-function FeaturedPost(props) {
+import ResponsiveDialog from './BlogDialog';
+ function FeaturedPost(props) {
   const { post } = props;
 
   return (
@@ -33,10 +33,9 @@ function FeaturedPost(props) {
         </Typography>
       )}
     </div>
-            <Typography variant="subtitle1" color="primary">
-              Continue reading...
-            </Typography>
-          </CardContent>
+    
+            <ResponsiveDialog props={post}/>
+           </CardContent>
           <CardMedia
             component="img"
             sx={{ width: 160, display: { xs: 'none', sm: 'block' } }}

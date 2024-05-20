@@ -9,12 +9,13 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import MainFeaturedPost from './MainFeaturedPost';
 import FeaturedPost from './FeaturedPost';
 import Footer from '../Footer';
- import AppBar from '@mui/material/AppBar';
+import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
- import Typography from '@mui/material/Typography';
- 
- import Menu from '@mui/material/Menu';
+import Typography from '@mui/material/Typography';
+
+import Menu from '@mui/material/Menu';
+import { Button, ButtonGroup } from '@mui/material';
 
 const sections = [
   { title: 'React', tag: 'react' },
@@ -55,8 +56,11 @@ export default function Blog({ posts }) {
   const [selectedTag, setSelectedTag] = React.useState(null);
 
   // Function to filter posts based on the selected tag
-  const filterPostsByTag = (tag) => {
+  const filterPostsByTag = (tag, buttonRef) => {
     setSelectedTag((prevTag) => (prevTag === tag ? null : tag));
+    if (buttonRef.current) {
+      buttonRef.current.blur();  // Remove focus from the button
+    }
   };
 
   // Filter posts based on the selected tag
@@ -64,7 +68,7 @@ export default function Blog({ posts }) {
     ? posts.filter((post) => post.tags.includes(selectedTag))
     : posts;
 
-  console.log(filteredPosts)
+  console.log(filteredPosts);
 
   // Scroll to the filtered posts section
   React.useEffect(() => {
@@ -78,86 +82,61 @@ export default function Blog({ posts }) {
   }, [selectedTag]);
 
   return (
-        <Container className='blogspage' maxWidth="lg">
-        <AppBar className="filterbar" position="sticky" >
-          <Container maxWidth="xl">
-            <Toolbar disableGutters>
-              <Typography
-                variant="h6"
-                noWrap
-                component="a"
-                href="/CodingCompass/"
-                sx={{
-                  mr: 2,
-                  display: { xs: 'none', md: 'flex' },
-                  fontFamily: 'monospace',
-                  fontWeight: 700,
-                  letterSpacing: '.3rem',
-                  color: 'inherit',
-                  textDecoration: 'none',
-                }}
+    <Container className='blogspage' maxWidth="lg">
+      <CssBaseline />
+
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          '& > *': {
+            m: 1,
+          },
+          '& .MuiButtonGroup-grouped:not(:last-of-type)': {
+            borderColor: 'red', // Change this to your desired separator color
+          },
+        }}
+      >
+        <ButtonGroup variant="text" aria-label="Basic button group">
+          {sections.map((section, index) => {
+            const buttonRef = React.createRef();
+            return (
+              <Button className='filterButton'
+                key={index}
+                onClick={() => filterPostsByTag(section.tag, buttonRef)}
+                variant={selectedTag === section.tag ? 'outlined' : 'text'}
+                ref={buttonRef}
               >
-                filters
-              </Typography>
+                {section.title}
+              </Button>
+            );
+          })}
+        </ButtonGroup>
+      </Box>
 
+      <ButtonGroup variant="text" aria-label="Basic button group">
+        <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+        </Box>
+      </ButtonGroup>
 
-              <Typography
-                variant="h5"
-                noWrap
-                component="a"
-                href="#app-bar-with-responsive-menu"
-                sx={{
-                  mr: 2,
-                  display: { xs: 'flex', md: 'none' },
-                  flexGrow: 1,
-                  fontFamily: 'monospace',
-                  fontWeight: 700,
-                  letterSpacing: '.3rem',
-                  color: 'inherit',
-                  textDecoration: 'none',
-                }}
-              >              </Typography>
-         
-              <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-                {sections.map((section, index) => (
-                  <button
-                    key={index}
-                    onClick={() => filterPostsByTag(section.tag)}
-                  >
-                    {section.title}
-                  </button>
+      {/* Main Featured Post */}
+      <MainFeaturedPost post={posts.find((post) => post.mainFeature)} />
 
-                ))}
-              </Box>
+      {/* Filtered Posts */}
+      <div id="filteredPosts">
+        <Grid container spacing={4}>
+          {filteredPosts.map((post, index) => (
+            <FeaturedPost key={index} post={post} />
+          ))}
+        </Grid>
+      </div>
 
-
-            </Toolbar>
-          </Container>
-        </AppBar>
-
-
-
-
-
-        {/* Main Featured Post */}
-        <MainFeaturedPost post={posts.find((post) => post.mainFeature)} />
- 
-
-        {/* Filtered Posts */}
-        <hr />
-        <div id="filteredPosts">
-          <Grid container spacing={4}>
-            {filteredPosts.map((post, index) => (
-              <FeaturedPost key={index} post={post} />
-            ))}
-          </Grid>
-        </div>
-
-        {/* Footer */}
-        <Footer
-          title=""
-          description=""
-        />
-      </Container>
-   );
+      {/* Footer */}
+      <Footer
+        title=""
+        description=""
+      />
+    </Container>
+  );
 }
