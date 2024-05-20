@@ -6,21 +6,23 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import XIcon from '@mui/icons-material/X';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import Header from '../Header';
 import MainFeaturedPost from './MainFeaturedPost';
 import FeaturedPost from './FeaturedPost';
 import Footer from '../Footer';
-
+ import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+ import Typography from '@mui/material/Typography';
+ 
+ import Menu from '@mui/material/Menu';
 
 const sections = [
-  { title: 'React', url: '/blogs' },
-  { title: 'GoLang', url: '#' },
-  { title: 'Vue', url: '#' },
-  { title: 'python', url: '#' },
-  { title: 'terraform', url: '#' },
+  { title: 'React', tag: 'react' },
+  { title: 'GoLang', tag: 'go' },
+  { title: 'Vue', tag: 'vue' },
+  { title: 'Python', tag: 'python' },
+  { title: 'Terraform', tag: 'terraform' },
 ];
-
-
 
 const sidebar = {
   title: 'About',
@@ -46,43 +48,116 @@ const sidebar = {
   ],
 };
 
-// TODO remove, this demo shouldn't need to reset the theme.
-const defaultTheme = createTheme();
+// Create a theme for the blog
+const theme = createTheme();
 
 export default function Blog({ posts }) {
+  const [selectedTag, setSelectedTag] = React.useState(null);
 
-  const mainFeaturedPost = posts.find(post => post.mainFeature) || null;
+  // Function to filter posts based on the selected tag
+  const filterPostsByTag = (tag) => {
+    setSelectedTag((prevTag) => (prevTag === tag ? null : tag));
+  };
 
-  // Derive featuredPosts from the rest of the posts array
-  const featuredPosts = posts.filter(post => post.feature && !post.mainFeature);
-  const theRest = posts.filter(post => !post.feature && !post.mainFeature);
+  // Filter posts based on the selected tag
+  const filteredPosts = selectedTag
+    ? posts.filter((post) => post.tags.includes(selectedTag))
+    : posts;
 
-   return (
-    <ThemeProvider  theme={defaultTheme}>
-       <Container className='bloggingWindow' maxWidth="lg">
+  console.log(filteredPosts)
+
+  // Scroll to the filtered posts section
+  React.useEffect(() => {
+    const filteredPostsSection = document.getElementById('filteredPosts');
+    if (filteredPostsSection) {
+      window.scrollTo({
+        top: filteredPostsSection.offsetTop,
+        behavior: 'smooth',
+      });
+    }
+  }, [selectedTag]);
+
+  return (
+        <Container className='blogspage' maxWidth="lg">
+        <AppBar className="filterbar" position="sticky" >
+          <Container maxWidth="xl">
+            <Toolbar disableGutters>
+              <Typography
+                variant="h6"
+                noWrap
+                component="a"
+                href="/CodingCompass/"
+                sx={{
+                  mr: 2,
+                  display: { xs: 'none', md: 'flex' },
+                  fontFamily: 'monospace',
+                  fontWeight: 700,
+                  letterSpacing: '.3rem',
+                  color: 'inherit',
+                  textDecoration: 'none',
+                }}
+              >
+                filters
+              </Typography>
+
+
+              <Typography
+                variant="h5"
+                noWrap
+                component="a"
+                href="#app-bar-with-responsive-menu"
+                sx={{
+                  mr: 2,
+                  display: { xs: 'flex', md: 'none' },
+                  flexGrow: 1,
+                  fontFamily: 'monospace',
+                  fontWeight: 700,
+                  letterSpacing: '.3rem',
+                  color: 'inherit',
+                  textDecoration: 'none',
+                }}
+              >              </Typography>
+         
+              <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+                {sections.map((section, index) => (
+                  <button
+                    key={index}
+                    onClick={() => filterPostsByTag(section.tag)}
+                  >
+                    {section.title}
+                  </button>
+
+                ))}
+              </Box>
+
+
+            </Toolbar>
+          </Container>
+        </AppBar>
+
+
+
+
+
+        {/* Main Featured Post */}
+        <MainFeaturedPost post={posts.find((post) => post.mainFeature)} />
  
-        <Header title="Coding Compass Adventure Log" sections={sections} />
-       
-        <main>
-          <MainFeaturedPost post={mainFeaturedPost} />
+
+        {/* Filtered Posts */}
+        <hr />
+        <div id="filteredPosts">
           <Grid container spacing={4}>
-            {featuredPosts.map((post) => (
-              <FeaturedPost key={post.title} post={post} />
+            {filteredPosts.map((post, index) => (
+              <FeaturedPost key={index} post={post} />
             ))}
           </Grid>
+        </div>
 
-             <Grid container spacing={4}>
-            {theRest.map((post) => (
-              <FeaturedPost key={post.title} post={post} />
-            ))}
-          </Grid>
-        </main>
-
+        {/* Footer */}
+        <Footer
+          title=""
+          description=""
+        />
       </Container>
-      <Footer
-        title="Footer"
-        description="Something here to give the footer a purpose!"
-      />
-    </ThemeProvider>
-  );
+   );
 }

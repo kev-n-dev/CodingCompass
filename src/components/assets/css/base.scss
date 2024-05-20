@@ -4,31 +4,89 @@
 @import "./blogs.scss";
 
 body {
-    font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 500;
-    margin: 0;
-    background-color: $NeoMorphBg!important;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 500;
+  margin: 0;
+  background-color: $NeoMorphBg !important;
+}
+
+
+.blogspage {
+  padding: 10%;
+
+  .filterbar {
+    font-size: smaller !important;
+    
+    height: fit-content !important;
+    ;
+    color: $textColor !important;
+    background-color: $NeoMorphBg !important;
+     justify-content: space-between !important;
+
+     box-shadow: none!important;
+
+
+    Button {
+      margin: 1%;
+      border-radius: 9px;
+       background: linear-gradient(145deg, #cacaca, #f0f0f0);
+      box-shadow:  9px 9px 18px #727272,
+                   -9px -9px 18px #ffffff;
+    }
+
+  }
 }
 
 .not-found-page {
-    height: 100vh;
-    width: 100vw;
-    background-image: url('../images/static/404_bg.png');
-    background-size: cover; /* Ensures the image covers the entire viewport */
-    background-position: center;
-    background-repeat: no-repeat; /* Prevents the image from repeating */
-    display: flex;
-    flex-direction: column; /* Changed to column to match the layout of text */
-    justify-content: center;
-    align-items: center;
-    padding:0;
+  height: 100vh;
+  width: 100vw;
+  background-image: url('../images/static/404_bg.png');
+  background-size: cover;
+  /* Ensures the image covers the entire viewport */
+  background-position: center;
+  background-repeat: no-repeat;
+  /* Prevents the image from repeating */
+  display: flex;
+  flex-direction: column;
+  /* Changed to column to match the layout of text */
+  justify-content: center;
+  align-items: center;
+  padding: 0;
 
-    color: #fff; /* Adjust the text color if needed */
-  }
-  
-  .message-404 {
-   
-    position: absolute;
-    top: 13%;
+  color: #fff;
+  /* Adjust the text color if needed */
+}
 
-  }
+.message-404 {
+
+  position: absolute;
+  top: 13%;
+
+}
+
+
+.footer {
+  display: flex !important;
+  justify-content: space-between !important;
+  color: $textColor !important;
+  /* Replace $textColor with actual color value */
+   /* or sticky, depending on the desired behavior */
+   justify-content: center!important;
+  transition: all .3s!important;
+   margin:0 auto!important;
+
+   left: 0!important;
+  margin-top: 2%!important;
+    align-items: center !important;
+
+  height: fit-content;
+
+  color: $textColor !important;
+  /* or sticky, depending on the desired behavior */
+
+   border-radius: 1px!important;
+  background: linear-gradient(145deg, #cacaca, #f0f0f0)!important;
+  box-shadow: inset 5px 5px 10px #9d9d9d,
+  inset -5px -5px 10px #ffffff!important;
+
+}

@@ -24,6 +24,15 @@ function FeaturedPost(props) {
             <Typography variant="subtitle1" paragraph>
               {post.description}
             </Typography>
+            <div>
+      {/* Check if post.tags exists and is an array */}
+      {Array.isArray(post.tags) && (
+        <Typography variant="subtitle1" color="text.secondary">
+          {/* Join the tags array elements with a comma */}
+          [{post.tags.join(', ')}]
+        </Typography>
+      )}
+    </div>
             <Typography variant="subtitle1" color="primary">
               Continue reading...
             </Typography>
