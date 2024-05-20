@@ -28,22 +28,7 @@ const posts = [
       mainFeature: true,
       tags: ['vite','react','vue'],
       feature: false,
-    }, {
-      file: react_router,
-      title: 'React Hash Routing vs. Browser Routing',
-      date: 'MAY 19',
-      imageText: "react router",
-
-      description:
-        'Discover the nuances between Hash Routing and Browser Routing in React Router, uncovering their benefits and limitations, and understand why GitHub Pages favors Hash Routing. Make informed decisions about routing in your React applications for optimal performance and compatibility.',
-        image: post3Image,
-        imageLabel: 'react router',
-      linkText: 'Continue reading…',
-      mainFeature: false,
-      feature: true,
-      tags: ['deploy','github','react'],
-
-    },
+    }, 
     {
       file: react2github,
       title: 'Free Hosting? Yes, Please!',
@@ -59,6 +44,22 @@ const posts = [
       tags: ['react','github','vite','hosting'],
 
       feature: true,
+    },
+    {
+      file: react_router,
+      title: 'React Hash Routing vs. Browser Routing',
+      date: 'MAY 19',
+      imageText: "react router",
+
+      description:
+        'Discover the nuances between Hash Routing and Browser Routing in React Router, uncovering their benefits and limitations, and understand why GitHub Pages favors Hash Routing. Make informed decisions about routing in your React applications for optimal performance and compatibility.',
+        image: post3Image,
+        imageLabel: 'react router',
+      linkText: 'Continue reading…',
+      mainFeature: false,
+      feature: true,
+      tags: ['deploy','github','react'],
+
     },
      
    ];
