@@ -2,15 +2,14 @@
 import React from 'react';
 import Blog from '../ui/blogs/Blog';
 
-import getting_started_with_vite from '../assets/logs/vite.md';
+import getting_started_with_vite from '../assets/blog_entries/vite.md';
 import post1Image  from  '../assets/images/vite/vite-bg.png';
 
-import react2github from '../assets/logs/github-pages-deploy.md';
+import react2github from '../assets/blog_entries/github-pages-deploy.md';
 import react2githubImg  from  '../assets/images/blog_images/reactDeploy.png';
 
 
-
-import react_router from '../assets/logs/routing.md';
+import react_router from '../assets/blog_entries/routing.md';
 import post3Image  from  '../assets/images/blog_images/router_path.png';
 
  
@@ -25,7 +24,7 @@ const posts = [
       imageText: "vite",
       imageLabel: 'vite logo',
       linkText: 'Continue reading…',
-      mainFeature: true,
+      mainFeature: false,
       tags: ['vite','react','vue'],
       feature: false,
     }, 
@@ -40,7 +39,7 @@ const posts = [
         image: react2githubImg,
         imageLabel: 'react deployed',
       linkText: 'Continue reading…',
-      mainFeature: false,
+      mainFeature: true,
       tags: ['react','github','vite','hosting'],
 
       feature: true,
