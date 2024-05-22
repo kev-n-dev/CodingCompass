@@ -3,8 +3,7 @@ import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import '../src/components/assets/css/base.scss'
 import HomePage from './components/pages/HomePage';
-import BlogsPage from './components/pages/BlogsPage';
-import AboutPage from './components/pages/AboutPage';
+ import AboutPage from './components/pages/AboutPage';
 import Navigation from './components/Navigation';
 import NotFoundPage from './components/pages/notFound';
 
@@ -16,8 +15,7 @@ function App() {
       <Navigation />
       <Routes>
       <Route path="/" element={<HomePage />} />
-        <Route path="/blogs" element={<BlogsPage />} />
-        <Route path="/about" element={<AboutPage />} />
+         <Route path="/about" element={<AboutPage />} />
         <Route path="*" element={<NotFoundPage />} /> 
       </Routes>
     </Router>

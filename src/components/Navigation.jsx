@@ -17,7 +17,6 @@ import MyIcon from './assets/images/icons/logo.svg';
 const pages = [
   { title: 'Home', link: '#/' },
   { title: 'About', link: '#/about' },
-  { title: 'Blog', link: '#/blogs' },
 ];
 
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
