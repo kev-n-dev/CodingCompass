@@ -14,8 +14,17 @@ body {
 .blogspage {
   padding: 10%;
   .filterButton{
-    color: $main_brand_color;
+    color: $dark_accent;
     border-color: $dark_accent!important;
+    font-weight: 400;
+
+
+    &:hover {
+      border-color: $dark_accent!important;
+
+      color: $dark_shades !important;
+  }
+
   }
   
 }

@@ -94,8 +94,7 @@ export default function Blog({ posts }) {
             m: 1,
           },
           '& .MuiButtonGroup-grouped:not(:last-of-type)': {
-            borderColor: 'red', // Change this to your desired separator color
-          },
+           },
         }}
       >
         <ButtonGroup variant="text" aria-label="Basic button group">
