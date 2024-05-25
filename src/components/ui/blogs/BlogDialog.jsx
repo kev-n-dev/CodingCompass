@@ -10,8 +10,6 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 
 export default function ResponsiveDialog(props) {
-  const { post } = props;
-
   const [open, setOpen] = React.useState(false);
   const [markdownContent, setMarkdownContent] = React.useState('');
   const theme = useTheme();
@@ -19,16 +17,24 @@ export default function ResponsiveDialog(props) {
 
   const handleClickOpen = async () => {
     try {
-      const response = await fetch('/markdown/sample.md'); // Ensure the path is correct based on your project structure
+      console.log(props.props.file)
+      const response = await fetch(props.props.file);
+      const contentType = response.headers.get("content-type");
+      
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
+
+      console.log(contentType)
+      if (!contentType || !contentType.includes("text/markdown")) {
+        throw new Error('Fetched file is not a markdown file');
+      }
+
       const text = await response.text();
       setMarkdownContent(text);
       setOpen(true);
     } catch (error) {
       console.error('Error fetching markdown file:', error);
-      // Handle error (e.g., display a notification or a placeholder text)
       setMarkdownContent('Failed to load content.');
       setOpen(true);
     }
@@ -50,19 +56,16 @@ export default function ResponsiveDialog(props) {
         aria-labelledby="responsive-dialog-title"
       >
         <DialogTitle id="responsive-dialog-title">
-          {"Markdown Content"}
+          {props.props.title}
         </DialogTitle>
         <DialogContent>
           <ReactMarkdown remarkPlugins={[remarkGfm]}>
-            {post}
+            {markdownContent}
           </ReactMarkdown>
         </DialogContent>
         <DialogActions>
-          <Button variant='text' autoFocus onClick={handleClose}>
-            Disagree
-          </Button>
           <Button onClick={handleClose} autoFocus>
-            Agree
+            Close
           </Button>
         </DialogActions>
       </Dialog>

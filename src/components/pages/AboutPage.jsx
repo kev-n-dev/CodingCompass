@@ -2,6 +2,7 @@ import React from 'react';
  
 const AboutPage = () => {
   return (
+    <>
     <div className="about-me-container">
       <h1>About Me</h1>
       <div className="about-me-content">
@@ -42,6 +43,8 @@ const AboutPage = () => {
         </ul>
       </div>
     </div>
+    </>
+
   );
 };
 

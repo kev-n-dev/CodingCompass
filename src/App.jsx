@@ -16,15 +16,18 @@ function App() {
   return (
 
     <>
-      <AnimatedBg />
       <Router>
+      <AnimatedBg />
+
         <Navigation />
         <Routes>
+
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Router>
+
 
     </>
 

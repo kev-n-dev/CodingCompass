@@ -9,6 +9,13 @@ body {
   margin: 0;
   background-color: $light_shades !important;
 }
+ 
+
+.about-me-container {
+  position: relative;
+ 
+  z-index: 0; /* Use a low z-index to place it behind other elements */
+}
 
 
 .blogspage {
