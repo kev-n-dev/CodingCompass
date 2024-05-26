@@ -72,15 +72,16 @@ export default function Blog({ posts }) {
 
   // Scroll to the filtered posts section
   React.useEffect(() => {
-    const filteredPostsSection = document.getElementById('filteredPosts');
-    if (filteredPostsSection) {
-      window.scrollTo({
-        top: filteredPostsSection.offsetTop,
-        behavior: 'smooth',
-      });
+    if (selectedTag) {
+      const filteredPostsSection = document.getElementById('filteredPosts');
+      if (filteredPostsSection) {
+        window.scrollTo({
+          top: filteredPostsSection.offsetTop,
+          behavior: 'smooth',
+        });
+      }
     }
   }, [selectedTag]);
-
   return (
     <Container className='blogspage' maxWidth="lg">
       <CssBaseline />

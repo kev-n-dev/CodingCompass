@@ -17,6 +17,7 @@ const AnimatedBg = () => {
         <>
             {init && (
                 <Particles
+                className="aniBg"
                     id="tsparticles"
                     options={{
                         background: {
@@ -52,11 +53,11 @@ const AnimatedBg = () => {
                                 value: "#283227",
                             },
                             links: {
-                                color: "#ffffff",
+                                color: "#ff9a02",
                                 distance: 150,
                                 enable: true,
-                                opacity: 0.5,
-                                width: 1,
+                                opacity: 1,
+                                width: 3,
                             },
                             move: {
                                 direction: "none",
@@ -64,7 +65,7 @@ const AnimatedBg = () => {
                                 outModes: {
                                     default: "bounce",
                                 },
-                                random: false,
+                                random: true,
                                 speed: 2,
                                 straight: false,
                             },

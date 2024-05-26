@@ -12,6 +12,7 @@ import react2githubImg  from  '../assets/images/blog_images/reactDeploy.png';
 
 import react_router from '../assets/blog_entries/routing.md';
 import post3Image  from  '../assets/images/blog_images/router_path.png';
+import ZoomOnScrollImage from '../ui/zoomScroll';
 
  
 const posts = [
@@ -66,6 +67,8 @@ const posts = [
 const HomePage = () => {
     return (
         <>
+                  <ZoomOnScrollImage src="./src/components/assets/images/static/compass_portal.png" alt="learning portal" />
+
       <Blog
       posts={posts} />
       </>

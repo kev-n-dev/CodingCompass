@@ -11,10 +11,20 @@ body {
 }
  
 
+
+.aniBg{
+  z-index: -2!important; /* Use a low z-index to place it behind other elements */
+
+}
 .about-me-container {
   position: relative;
  
-  z-index: 0; /* Use a low z-index to place it behind other elements */
+ }
+
+.login_portal {
+  position: absolute;
+    z-index: 20!important; /* Use a low z-index to place it behind other elements */
+
 }
 
 
@@ -24,7 +34,6 @@ body {
     color: $dark_accent;
     border-color: $dark_accent!important;
     font-weight: 400;
-
 
     &:hover {
       border-color: $dark_accent!important;

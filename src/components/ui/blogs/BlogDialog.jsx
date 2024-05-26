@@ -8,6 +8,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import MarkdownViewer from './makrdownViewer';
 
 export default function ResponsiveDialog(props) {
   const [open, setOpen] = React.useState(false);
@@ -59,6 +60,9 @@ export default function ResponsiveDialog(props) {
           {props.props.title}
         </DialogTitle>
         <DialogContent>
+
+        <MarkdownViewer filePath={props.props.file}/>
+
           <ReactMarkdown remarkPlugins={[remarkGfm]}>
             {markdownContent}
           </ReactMarkdown>
