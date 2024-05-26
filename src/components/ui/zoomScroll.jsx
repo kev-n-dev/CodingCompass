@@ -49,7 +49,7 @@ const ZoomOnScrollImage = ({ src, alt }) => {
             top: '50%',
             transform: 'translate(-50%, -50%)', // Center the image
             transition: 'transform 0.1s ease-out',
-             display: halfScrolled ? 'none' : '', // Hide if scrolled more than halfway
+            pointerEvents: halfScrolled ? 'none' : 'auto', // Disable pointer events if scrolled more than halfway
   
           }}
       />
