@@ -1,10 +1,11 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { gsap } from 'gsap';
-  
+import Container from '@mui/material/Container';
+import { BorderBottom, WidthFull } from '@mui/icons-material';
+
 const ZoomOnScrollImage = ({ src, alt }) => {
   const imgRef = useRef(null);
-  const [fullyScrolled, setFullyScrolled] = useState(false);
-  const [halfScrolled, setHalfScrolled] = useState(false);
+   const [halfScrolled, setHalfScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,26 +37,25 @@ const ZoomOnScrollImage = ({ src, alt }) => {
 
   return (
  
-    <div className='login_portal' style={{ position: 'relative', overflow: 'hidden', height: '100vh' }}>
-      <img
+    <div className='login_portal' style={{ position: 'relative', overflow: 'hidden', height: '100vh'}}>
+      <img className='portalImg'
         ref={imgRef}
         src={src}
         alt={alt}
         style={{
-             width: '100vw', // Full viewport width
-            height: '100%', // Full viewport height
+            Width: 'auto',
+             height: '100%', // Full viewport height
             objectFit: 'cover',
             position: 'fixed',
             top: '50%',
             transform: 'translate(-50%, -50%)', // Center the image
             transition: 'transform 0.1s ease-out',
             pointerEvents: halfScrolled ? 'none' : 'auto', // Disable pointer events if scrolled more than halfway
-  
           }}
       />
     
     </div>
-  );
+   );
 };
 
 export default ZoomOnScrollImage;

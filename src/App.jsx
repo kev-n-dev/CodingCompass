@@ -7,26 +7,30 @@ import AboutPage from './components/pages/AboutPage';
 import Navigation from './components/Navigation';
 import NotFoundPage from './components/pages/notFound';
 import AnimatedBg from './components/ui/Particles';
-import ZoomOnScrollImage from './components/ui/zoomScroll';
+import Container from '@mui/material/Container';
+import { Padding } from '@mui/icons-material';
 
 function App() {
   return (
     <>
-          
-           <AnimatedBg />
 
-          <Router>
+      <AnimatedBg />
+
+      <Router>
+        <Container maxWidth="lg">
+
           <Navigation />
 
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/about" element={<AboutPage />} />
-              <Route path="*" element={<NotFoundPage />} />
-            </Routes>
+        </Container>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
 
-          </Router>
-           
-      </>
+      </Router>
+
+    </>
   );
 }
 
