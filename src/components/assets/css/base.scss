@@ -94,3 +94,14 @@ body {
  
 
 }
+
+@media screen and (max-width: 1010px) {
+  .portalImg {
+   display: none;
+   visibility: hidden;
+  }
+
+  .login_portal {
+     display: none;
+  }
+}
