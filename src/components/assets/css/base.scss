@@ -23,7 +23,8 @@ body {
 
 .portalImg {
   margin-top: 40px!important;
- 
+  z-index: 2!important; /* Use a low z-index to place it behind other elements */
+
 }
 
 

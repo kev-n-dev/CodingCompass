@@ -18,7 +18,6 @@ export default function ResponsiveDialog(props) {
 
   const handleClickOpen = async () => {
     try {
-      console.log(props.props.file)
       const response = await fetch(props.props.file);
       const contentType = response.headers.get("content-type");
       
@@ -26,8 +25,7 @@ export default function ResponsiveDialog(props) {
         throw new Error('Network response was not ok');
       }
 
-      console.log(contentType)
-      if (!contentType || !contentType.includes("text/markdown")) {
+       if (!contentType || !contentType.includes("text/markdown")) {
         throw new Error('Fetched file is not a markdown file');
       }
 
@@ -48,24 +46,19 @@ export default function ResponsiveDialog(props) {
   return (
     <React.Fragment>
       <Button variant="text" onClick={handleClickOpen}>
-        Continue reading?
-      </Button>
-      <Dialog
+      {props.props.linkText}      </Button>
+      <Dialog 
         fullScreen={fullScreen}
         open={open}
         onClose={handleClose}
-        aria-labelledby="responsive-dialog-title"
+        maxWidth="md"
+              aria-labelledby="responsive-dialog-title"
       >
         <DialogTitle id="responsive-dialog-title">
           {props.props.title}
         </DialogTitle>
         <DialogContent>
-
-        <MarkdownViewer filePath={props.props.file}/>
-
-          <ReactMarkdown remarkPlugins={[remarkGfm]}>
-            {markdownContent}
-          </ReactMarkdown>
+        <MarkdownViewer   filePath={props.props.file}/>
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} autoFocus>

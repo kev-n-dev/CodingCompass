@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import remarkHtml from 'remark-html';
 
 export default function MarkdownViewer({ filePath }) {
   const [markdownContent, setMarkdownContent] = useState('');
@@ -25,7 +26,7 @@ export default function MarkdownViewer({ filePath }) {
 
   return (
     <div>
-      <ReactMarkdown remarkPlugins={[remarkGfm]}>
+      <ReactMarkdown remarkPlugins={[remarkGfm, remarkHtml]}>
         {markdownContent}
       </ReactMarkdown>
     </div>

@@ -32,8 +32,9 @@ function MarkdownRenderer({ file }) {
 
   return (
     <div>
-      <ReactMarkdown>{markdownContent}</ReactMarkdown>
-    </div>
+            <ReactMarkdown escapeHtml={false}>{markdownContent}</ReactMarkdown>
+
+     </div>
   );
 }
 

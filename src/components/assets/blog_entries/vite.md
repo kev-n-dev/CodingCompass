@@ -1,5 +1,7 @@
 # Vite Quick Start for React
-![npm create vite@latest](../images/vite/vite.png)
+
+<img src="./blog_images/vite/vite.png" alt="npm create vite@latest" style="max-width:100%; height:auto;">
+ 
 
 ## What is Vite?
 
@@ -30,7 +32,7 @@ Key features of Vite include:
 
     1. provide a project name
 
-    ![npm create vite@latest](../images/vite/npm%20create%20vite%20.png)
+    ![npm create vite@latest](./blog_images/vite/npm%20create%20vite%20.png)
     
     2. ## Select a framework 
         There are a number of frameworks available when creating a new project with Vite:
@@ -55,7 +57,7 @@ Key features of Vite include:
     
         for this project we  will select `react` as the framework.
 
-        ![npm create vite@latest](../images/vite/select%20framework.png)
+        ![npm create vite@latest](./blog_images/vite/select%20framework.png)
 
     3. ## Select a varient. 
     
@@ -75,13 +77,13 @@ Key features of Vite include:
     
     for this project we will select `Javascript +swc`.
 
-    ![npm create vite@latest](../images/vite/select%20varient.png)
+    ![npm create vite@latest](./blog_images/vite/select%20varient.png)
     
     
 
 
     ## Congratulations you have now created your first react project ! 
-    ![npm create vite@latest](../images/vite/done.png)
+    ![npm create vite@latest](./blog_images/vite/done.png)
 
     ### Now you can:
 

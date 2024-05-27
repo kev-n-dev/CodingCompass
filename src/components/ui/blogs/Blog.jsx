@@ -68,8 +68,7 @@ export default function Blog({ posts }) {
     ? posts.filter((post) => post.tags.includes(selectedTag))
     : posts;
 
-  console.log(filteredPosts);
-
+ 
   // Scroll to the filtered posts section
   React.useEffect(() => {
     if (selectedTag) {

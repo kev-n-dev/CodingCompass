@@ -62,7 +62,8 @@ Before proceeding, ensure you have the following:
 
    ```
    https://your-github-username.github.io/your-repo-name/
-   Replace your-github-username with your GitHub username and your-repo-name with the name of your GitHub repository.
+   Replace your-github-username with your GitHub username 
+   and your-repo-name with the name of your GitHub repository.
    ```
 
 

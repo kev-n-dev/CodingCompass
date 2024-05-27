@@ -1,8 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { gsap } from 'gsap';
-import Container from '@mui/material/Container';
-import { BorderBottom, WidthFull } from '@mui/icons-material';
-
+ 
 const ZoomOnScrollImage = ({ src, alt }) => {
   const imgRef = useRef(null);
    const [halfScrolled, setHalfScrolled] = useState(false);
@@ -43,14 +41,16 @@ const ZoomOnScrollImage = ({ src, alt }) => {
         src={src}
         alt={alt}
         style={{
-            Width: 'auto',
-             height: '100%', // Full viewport height
+            width: '100%', // Adjusted from 'Width' to 'width'
+            height: '100%', // Full viewport height
             objectFit: 'cover',
-            position: 'fixed',
-            top: '50%',
-            transform: 'translate(-50%, -50%)', // Center the image
+            position: 'fixed', // Adjusted from 'fixed' to 'absolute'
+            top: '50%', // Adjusted from '50vh' to '50%'
+            left: '50%', // Adjusted from '50vh' to '50%'
+            transform: 'translate(-50%, -50%)', // Adjusted from 'translate(-50vh, -50vh)' to 'translate(-50%, -50%)'
             transition: 'transform 0.1s ease-out',
             pointerEvents: halfScrolled ? 'none' : 'auto', // Disable pointer events if scrolled more than halfway
+    
           }}
       />
     
