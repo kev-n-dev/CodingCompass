@@ -1,7 +1,5 @@
 # Vite Quick Start for React
-
-<img src="./blog_images/vite/vite.png" alt="npm create vite@latest" style="max-width:100%; height:auto;">
- 
+![npm create vite@latest](./blog_images/vite/vite.png)
 
 ## What is Vite?
 
