@@ -8,14 +8,14 @@ const ZoomOnScrollImage = ({ src, alt }) => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      const scale = 1 + scrollY / 500; // Adjust the scale factor as needed
+      const scale = 1 + scrollY / 300; // Adjust the scale factor as needed
       gsap.to(imgRef.current, { scale: scale, duration: 0.1, ease: 'power1.out' });
 
 
  
 
       // Check if scrolled more than halfway
-      const halfPage = document.body.offsetHeight / 4;
+      const halfPage = document.body.offsetHeight / 3;
       if (scrollY >= halfPage) {
         setHalfScrolled(true);
       } else {
@@ -35,7 +35,7 @@ const ZoomOnScrollImage = ({ src, alt }) => {
 
   return (
  
-    <div className='login_portal' style={{ position: 'relative', overflow: 'hidden', height: '100vh'}}>
+    <div className='login_portal' style={{ position: 'relative', overflow: 'hidden', height: '110vh'}}>
       <img className='portalImg'
         ref={imgRef}
         src={src}
