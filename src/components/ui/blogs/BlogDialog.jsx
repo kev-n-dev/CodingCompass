@@ -54,17 +54,16 @@ export default function ResponsiveDialog(props) {
         maxWidth="md"
               aria-labelledby="responsive-dialog-title"
       >
-        <DialogTitle id="responsive-dialog-title">
-          {props.props.title}
-        </DialogTitle>
-        <DialogContent>
-        <MarkdownViewer   filePath={props.props.file}/>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleClose} autoFocus>
+        <DialogTitle className="blogTitleBar" id="responsive-dialog-title">
+          {props.props.title} 
+           <Button className="closeBtn" onClick={handleClose} autoFocus>
             Close
           </Button>
-        </DialogActions>
+         </DialogTitle>
+        
+        <DialogContent >
+        <MarkdownViewer   filePath={props.props.file}/>
+        </DialogContent>
       </Dialog>
     </React.Fragment>
   );

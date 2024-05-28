@@ -21,6 +21,10 @@ import vue_image from '../assets/images/blog_images/vue.jpg';
 
 import vue_router from '../assets/blog_entries/vue_routing.md';
 
+import state_management from  '../assets/blog_entries/state_management.md';
+import ttt_image from '../assets/images/blog_images/ttt.png';
+
+
 const posts = [
   {
     file: getting_started_with_vite,
@@ -94,6 +98,20 @@ const posts = [
     mainFeature: false,
     feature: true,
     tags: ['vue'],
+  },
+
+  {
+    file: state_management,
+    title: "A Beginner's Guide to State Management",
+    date: 'MAY 27',
+    imageText: "state management",
+    description: 'learn the basics of state management in go, by coding a simple game you can play with a friend',
+    image: ttt_image,
+    imageLabel: 'tic tac toe',
+    linkText: 'Continue reading…',
+    mainFeature: false,
+    feature: true,
+    tags: ['react', 'game', 'state management'],
   },
 ];
 const HomePage = () => {

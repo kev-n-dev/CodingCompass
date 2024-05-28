@@ -7,7 +7,7 @@ const NotFoundPage = () => {
     return (
         <div className='not-found-page'>
 
-            <h1 className='message-404'>Not-Found</h1>
+            <h1 className='message-404'>404-Not-Found</h1>
  
         </div>
     );

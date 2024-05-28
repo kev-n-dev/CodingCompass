@@ -25,8 +25,8 @@ export default function MarkdownViewer({ filePath }) {
   }, [filePath]);
 
   return (
-    <div>
-      <ReactMarkdown remarkPlugins={[remarkGfm, remarkHtml]}>
+    <div >
+      <ReactMarkdown className='blogContainer' remarkPlugins={[remarkGfm, remarkHtml]}>
         {markdownContent}
       </ReactMarkdown>
     </div>

@@ -17,14 +17,13 @@ Vue's two main characteristics are:
 
 EXAMPLE:
 
-<!-- testing  -->
-
-<pre>
-  &lt;div id="app" &gt;
-    &lt;button @ click="count++"&gt;
+```html
+<div>
+  <div id="app" >
+    <button @ click="count++">
       Count is: {{ count }}
-      &lt;/button&gt;
-    &lt;/div&gt;
+      </button>
+    </div>
 
     <script>
     import { createApp } from 'vue'
@@ -36,19 +35,17 @@ EXAMPLE:
         }
       }).mount('#app')
     </script>
-</pre>
-
-<br/>
-
+ </div>
+```
 # Components
 
 Vue Single-File Components (a.k.a. \*.vue files, abbreviated as SFC) is a special file format that allows us to encapsulate the template, logic, and styling of a Vue component in a single file.
 
 In the example below we can see that a Vue SFC is a natural extension of the classic trio of HTML, CSS, and JavaScript.
-The &lt;template&gt;, &lt;script&gt;, and &lt;style&gt; represent the view, logic, and styling of a component that can be imported and used throughout your project.
+The <template>, <script>, and <style> represent the view, logic, and styling of a component that can be imported and used throughout your project.
 
-<pre>
-    <script>
+```html 
+     <script>
       export default {
       // Properties returned from data() become reactive state
       // and will be exposed on `this`.
@@ -73,23 +70,19 @@ The &lt;template&gt;, &lt;script&gt;, and &lt;style&gt; represent the view, logi
     }
     </script>
 
-    &lt;template&gt;
-      &lt;!-- this.count is displayed reactively here using Declarative rendering --&gt;
-      &lt;button @ click=&quot;count++&quot;&gt;Count is: {{ count }}&lt;/button&gt;
-    &lt;/template&gt;
+    <template>
+      <!-- this.count is displayed reactively here using Declarative rendering -->
+      <button @ click=&quot;count++&quot;>Count is: {{ count }}</button>
+    </template>
 
     <style scoped>
       button {
         font-weight: bold;
       }
     </style>
-
-</pre>
-<hr>
+ ```
 In another entry, we will discuss the process of creating proper single-file components (SFC), like a header and a footer that you can use as a strong starting point for future Vue projects.
-<hr>
-<br/>
-
+ 
 Vue has a variety of uses that you can choose from according on your use case:
 
 - Static HTML improvement without a build step
@@ -101,8 +94,7 @@ Vue has a variety of uses that you can choose from according on your use case:
 
 By the end of this blog, if you follow along, You should have a functioning Vue.js application running on a local server that renders quick feedback in-browser while you work using hot module reloading with Webpack.
 
-<br>
-
+ 
 # Getting Started:
 
 The Vue CLI (command line interface) is a powerful component for Vue.js development. The major feature of the Vue CLI is its ability to construct and pre-configure a new single-page application with the vue create command. The Vue CLI also includes a variety of useful features that improve the Vue development experience.
@@ -128,24 +120,22 @@ Moving forward, this tutorial will use npm commands.
 
 The required Vue CLI files can be downloaded from the registrar, by running the command below:
 
-```
+```bash
 npm i -g @vue/cli
-
 ```
 
 - in the context of command options, -g indicates that the code should be installed on your computer globally.
   you can add it if you want to utilize the CLI from any location on your machine, if you do not include it the vue CLI will only function in the directory where it was installed.
-  <br/>
+  
   After installation, you will have access to the vue binary in your command line.
   You can verify that it is properly installed by simply running
 
-```
+```bash
   vue
 OR
   vue --version
 ```
 
-<br/>
 At this point, you have successfully downloaded npm globally along with the Vue CLI tool that you will use in the next section to create a generated Vue.js project.
 
 ## Step 2 — Generating a Single-Page Application
@@ -157,7 +147,7 @@ It's all set up, so you can get right to work creating your website or applicati
 
 To generate a single-page application, navigate to the directory you’d like your Vue project in, then run the following:
 
-```
+```bash
 vue create your-project-name
 ```
 
@@ -165,7 +155,7 @@ vue create your-project-name
 
 Once you type out that command, continue by pressing Enter. You will then receive the following prompt:
 
-```
+```bash
 Vue CLI v5.0.8
 ? Please pick a preset: (Use arrow keys)
   Default ([Vue 3] babel, eslint)
@@ -179,39 +169,37 @@ However, for the purposes of this example, we will select "Manually select featu
 
 After selecting `Manually select features`, you will receive several options, listed below, you will notice that some of these items are already selected. You may select as many or as few as you would like.
 
-However, for this tutorial, select the following by pressing &lt;space&gt; while the cursor is highlighting the option:
+However, for this tutorial, select the following by pressing <space> while the cursor is highlighting the option:
 
-<pre>
-Vue CLI v5.0.8
-? Please pick a preset: Manually select features
-? Check the features needed for your project: (Press &lt;space&gt; to select, &lt;a&gt; to toggle all, &lt;i&gt; to invert selection, and &lt;enter&gt; to proceed)
-❯◉ Babel
- ◯ TypeScript
- ◉ Progressive Web App (PWA) Support
- ◉ Router
- ◯ Vuex
- ◯ CSS Pre-processors
- ◉ Linter / Formatter
- ◯ Unit Testing
- ◯ E2E Testing
-</pre>
-
-<br/>
+```bash
+  Vue CLI v5.0.8
+  ? Please pick a preset: Manually select features
+  ? Check the features needed for your project: (Press <space> to select, <a> to toggle all, <i> to invert selection, and <enter> to proceed)
+  ❯◉ Babel
+  ◯ TypeScript
+  ◉ Progressive Web App (PWA) Support
+  ◉ Router
+  ◯ Vuex
+  ◯ CSS Pre-processors
+  ◉ Linter / Formatter
+  ◯ Unit Testing
+  ◯ E2E Testing
+```
 ### What are these options, and why do we want them?
 
 - `Babel` is a toolchain that is mainly used to convert ECMAScript 2015+ code into a **_backward compatible_** version of JavaScript in current and **older browsers** or **environments**.
 
-- `Progressive Web Application (PWA)` is a type of web app that can operate both as a web page and mobile app on any device.<br/>
+- `Progressive Web Application (PWA)` is a type of web app that can operate both as a web page and mobile app on any device.
   `// This website is a PWA so you can download it to your device if you wish.`
 
-- `Vue Router` helps link between the browser's URL/History and Vue's components allowing for certain paths to render whatever view is associated with it.<br/>
+- `Vue Router` helps link between the browser's URL/History and Vue's components allowing for certain paths to render whatever view is associated with it.
   `// It is the reason why you can share the URL to this individual blog entry`
 
-- `linting` is an automated process for static analysis of the codebase for potential errors and inconsistencies with the project’s coding standards. <br/>
+- `linting` is an automated process for static analysis of the codebase for potential errors and inconsistencies with the project’s coding standards. 
 
-<hr>
 
-<br/>
+
+
 
 ### Continuing Configuration
 
@@ -263,19 +251,18 @@ ESLint + Prettier
 
 The following option lets you decide when ESLint should format your code. When you save your work or upload it to a platform like GitHub, GitLab, or BitBucket, this can happen. It is advised to check any changes before committing to version control by using Lint on save:
 
-<pre>
+ ```
 Vue CLI v5.0.8
 ? Please pick a preset: Manually select features
 ? Check the features needed for your project: Babel, PWA, Router, Linter
 ? Choose a version of Vue.js that you want to start the project with 2.x
 ? Use history mode for router? (Requires proper server setup for index fallback in production) No
 ? Pick a linter / formatter config: Basic
-? Pick additional lint features: (Press &lt;space &gt; to select, &lt;a&gt; to toggle all, &lt;i&gt; to invert selection, and &lt;enter&gt; to proceed)
+? Pick additional lint features: (Press <space > to select, <a> to toggle all, <i> to invert selection, and <enter> to proceed)
 ❯◉ Lint on save
 ◯ Lint and fix on commit
-
-</pre>
-
+```
+ 
 after going through all your selected options, the CLI will ask you if you want to store these configurations as dedicated files or in the package.json.
 
 For several reasons, storing configurations in separate files is considered the best practice. This way, configurations can be more easily shared between projects, and you'll also keep your `package.json` as readable as possible by defining only the crucial details about your app
@@ -321,25 +308,19 @@ You do not need to download dependencies, as the CLI already did that for you.
 To view your generated project, open your browser of choice and visit localhost:8080 in the URL bar.
 You will find a welcome screen with the Vue logo and the technologies you’ve selected in the previous steps.
 
+```
 <div>
 <img style="width:100%; border-radius: 7px;
 border: 5px solid #555;
 " src="../images/what_is_vue/vue_sc.png" >
 </img>
 </div>
+```
 
-<br/>
-<center> <h1>Congratulations!!</h1></center>
+
+# Congratulations!! 
 
 You have now created your first vue web application using Vue.js and the vue CLI!
 The created code base is now available for editing you can also leave the server running to monitor your code changes live in the browser.
 
-<br/>
-<style>
- pre {    
-    font-size: 15px;
-        font-family: Monaco, 'Courier New', Courier, monospace;
-    overflow-x: scroll;
-    line-height: 1.5;
-}
-</style>
+ 
