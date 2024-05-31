@@ -26,7 +26,7 @@ import ttt_image from '../assets/images/blog_images/ttt.png';
 
 
 import react_blog from  '../assets/blog_entries/react.md';
-import ttt_image from '../assets/images/blog_images/reactImg.jpeg';
+import reactImg from '../assets/images/blog_images/reactImg.jpeg';
 
 const posts = [
   {
