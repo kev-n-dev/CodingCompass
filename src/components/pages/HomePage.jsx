@@ -25,7 +25,23 @@ import state_management from  '../assets/blog_entries/state_management.md';
 import ttt_image from '../assets/images/blog_images/ttt.png';
 
 
+import react_blog from  '../assets/blog_entries/react.md';
+import ttt_image from '../assets/images/blog_images/reactImg.jpeg';
+
 const posts = [
+  {
+    file: state_management,
+    title: "A Beginner's Guide to State Management",
+    date: 'MAY 27',
+    imageText: "state management",
+    description: 'learn the basics of state management in go, by coding a simple game you can play with a friend',
+    image: ttt_image,
+    imageLabel: 'tic tac toe',
+    linkText: 'Continue reading…',
+    mainFeature: false,
+    feature: true,
+    tags: ['react', 'game', 'state management'],
+  },
   {
     file: getting_started_with_vite,
     title: 'What is Vite?',
@@ -70,22 +86,21 @@ const posts = [
     mainFeature: false,
     feature: true,
     tags: ['deploy', 'github', 'react'],
-
   },
   {
-    file: what_is_vue,
-    title: 'What is Vue.js?',
-    date: 'MAY 27',
-    imageText: "vue.js",
-    description: 'Learn how to quickly build dynamic user interfaces with Vue.js, a beginner-friendly JavaScript framework that combines the best of React and Angular, and follow our step-by-step guide to create your first Vue application today.',
-    image: vue_image,
-    imageLabel: 'vue.js',
+    file: react_blog,
+    title: 'Should You Learn and Choose React for Your Developer Career?',
+    date: 'MAY 17',
+    imageText: "react.js",
+    description:
+      'Discover why React.js stands out as a top choice for aspiring developers, exploring its benefits, alternatives, and career opportunities in the dynamic world of web development.',
+    image: reactImg,
+    imageLabel: 'react.js',
     linkText: 'Continue reading…',
     mainFeature: false,
     feature: true,
-    tags: ['vue'],
+    tags: ['react'],
   },
-
   {
     file: vue_router,
     title: 'What is Vue Routing?',
@@ -99,19 +114,18 @@ const posts = [
     feature: true,
     tags: ['vue'],
   },
-
   {
-    file: state_management,
-    title: "A Beginner's Guide to State Management",
+    file: what_is_vue,
+    title: 'What is Vue.js?',
     date: 'MAY 27',
-    imageText: "state management",
-    description: 'learn the basics of state management in go, by coding a simple game you can play with a friend',
-    image: ttt_image,
-    imageLabel: 'tic tac toe',
+    imageText: "vue.js",
+    description: 'Learn how to quickly build dynamic user interfaces with Vue.js, a beginner-friendly JavaScript framework that combines the best of React and Angular, and follow our step-by-step guide to create your first Vue application today.',
+    image: vue_image,
+    imageLabel: 'vue.js',
     linkText: 'Continue reading…',
     mainFeature: false,
     feature: true,
-    tags: ['react', 'game', 'state management'],
+    tags: ['vue'],
   },
 ];
 const HomePage = () => {
