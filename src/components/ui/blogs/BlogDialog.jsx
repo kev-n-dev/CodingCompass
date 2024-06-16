@@ -20,7 +20,7 @@ const id = post.id
 
   const [open, setOpen] = useState(false);
   const [isCopied, setIsCopied] = useState(false);
-  const [textToCopy, setTextToCopy] = useState(`${window.location.href}blog/${id}`);
+  const [textToCopy, setTextToCopy] = useState(`${window.location.href}#/blog/${id}`);
 
   const [markdownContent, setMarkdownContent] = useState('');
   const theme = useTheme();
