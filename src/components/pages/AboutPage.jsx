@@ -18,7 +18,7 @@ const AboutPage = () => {
         <p>When I'm not immersed in code, I love exploring the great outdoors, diving into a good book, or experimenting with new recipes in the kitchen.</p>
         <p>Join me on this journey as we explore the ever-evolving world of software development together.</p>
       </section>
-      
+      <div  className="about-me-container" >
       <div className="social-links">
         <h2>Connect with Me</h2>
         <ul>
@@ -35,6 +35,8 @@ const AboutPage = () => {
           {/* Add more social links here */}
         </ul>
       </div>
+      </div>
+      
     </>
   );
 };
