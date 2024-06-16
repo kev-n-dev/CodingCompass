@@ -1,31 +1,62 @@
-import * as React from 'react';
+import React, { useState, useEffect } from 'react';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
 import MarkdownViewer from './makrdownViewer';
+ 
+import { useNavigate } from 'react-router-dom';
+import CopyToClipboardButton from '../CopyToClipboardButton';
 
-export default function ResponsiveDialog(props) {
-  const [open, setOpen] = React.useState(false);
-  const [markdownContent, setMarkdownContent] = React.useState('');
+
+
+const ResponsiveDialog = ({ post, is_link }) => {
+
+const id = post.id
+ 
+
+
+  const [open, setOpen] = useState(false);
+  const [isCopied, setIsCopied] = useState(false);
+  const [textToCopy, setTextToCopy] = useState(`${window.location.href}blog/${id}`);
+
+  const [markdownContent, setMarkdownContent] = useState('');
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
+   
+
+  const navi = useNavigate()
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const handleCloseAndRedirect = () => {
+    handleClose(); // Close the dialog or perform any other close-related actions
+    if (is_link) {
+         navi('/'); // This will navigate to the root URL of your application
+    }
+    // Redirect to home page
+  };
+ 
+
+  useEffect(() => {
+    if (is_link) {
+      setOpen(true); // Open the dialog automatically if is_link is true
+    }
+  }, [is_link]);
 
   const handleClickOpen = async () => {
     try {
-      const response = await fetch(props.props.file);
+      const response = await fetch(post.file);
       const contentType = response.headers.get("content-type");
       
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
 
-       if (!contentType || !contentType.includes("text/markdown")) {
+      if (!contentType || !contentType.includes("text/markdown")) {
         throw new Error('Fetched file is not a markdown file');
       }
 
@@ -39,32 +70,43 @@ export default function ResponsiveDialog(props) {
     }
   };
 
-  const handleClose = () => {
-    setOpen(false);
-  };
+  
 
   return (
     <React.Fragment>
-      <Button variant="text" onClick={handleClickOpen}>
-      {props.props.linkText}      </Button>
+
+      {!is_link && (
+        <Button variant="text" onClick={handleClickOpen}>
+          {post.linkText}
+        </Button>
+      )}
+
+<CopyToClipboardButton text={textToCopy} />
+
+
+
+             
       <Dialog 
         fullScreen={fullScreen}
         open={open}
         onClose={handleClose}
         maxWidth="md"
-              aria-labelledby="responsive-dialog-title"
+        aria-labelledby="responsive-dialog-title"
       >
-        <DialogTitle className="blogTitleBar" id="responsive-dialog-title">
-          {props.props.title} 
-           <Button className="closeBtn" onClick={handleClose} autoFocus>
-            Close
-          </Button>
-         </DialogTitle>
-        
-        <DialogContent >
-        <MarkdownViewer   filePath={props.props.file}/>
+        <DialogTitle id="responsive-dialog-title">
+          {post.title} 
+           
+            <Button className="closeBtn" onClick={handleCloseAndRedirect} autoFocus>
+              Close
+            </Button>
+          
+        </DialogTitle>
+        <DialogContent>
+          <MarkdownViewer filePath={post.file} />
         </DialogContent>
       </Dialog>
     </React.Fragment>
   );
-}
+};
+
+export default ResponsiveDialog;

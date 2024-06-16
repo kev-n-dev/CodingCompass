@@ -8,7 +8,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import ResponsiveDialog from './BlogDialog';
  function FeaturedPost(props) {
-  const { post } = props;
+  const { post, all } = props;
 
   return (
     <Grid item xs={12} md={6}>
@@ -34,7 +34,7 @@ import ResponsiveDialog from './BlogDialog';
       )}
     </div>
     
-            <ResponsiveDialog props={post}/>
+            <ResponsiveDialog post={post} is_link={false}/>
            </CardContent>
           <CardMedia
             component="img"

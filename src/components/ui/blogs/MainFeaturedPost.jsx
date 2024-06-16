@@ -52,7 +52,7 @@ function MainFeaturedPost(props) {
               {post.description}
             </Typography>
     
-      <ResponsiveDialog props={post}/>
+            <ResponsiveDialog className= "mainPost" post={post} is_link={false}/>
 
           </Box>
         </Grid>
