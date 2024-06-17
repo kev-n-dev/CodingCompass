@@ -17,11 +17,22 @@ const ResponsiveDialog = ({ post, is_link }) => {
 const id = post.id
  
 
+const buildLink = (id) => {
+  let base = `${window.location.origin}${window.location.pathname}`;
+  if (!base.endsWith('/')) {
+    base += '/';
+  }
+  if (!base.endsWith('#/')) {
+    base += '#/';
+  }
+  return `${base}blog/${id}`;
+};
 
   const [open, setOpen] = useState(false);
   const [isCopied, setIsCopied] = useState(false);
-  const [textToCopy, setTextToCopy] = useState(`${window.location.href}blog/${id}`);
-
+  const [textToCopy, setTextToCopy] = useState(buildLink(id));
+ 
+   
   const [markdownContent, setMarkdownContent] = useState('');
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
