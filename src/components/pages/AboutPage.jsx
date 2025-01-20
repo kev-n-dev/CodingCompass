@@ -23,7 +23,7 @@ const AboutPage = () => {
         <h2>Connect with Me</h2>
         <ul>
           <li>
-            <a href="https://github.com/coding-corps" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/kev-n-dev" target="_blank" rel="noopener noreferrer">
               GitHub
             </a>
           </li>

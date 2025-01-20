@@ -19,8 +19,8 @@ I value your feedback! If you have any suggestions, ideas, or comments regarding
 Stay connected and follow my journey on:
 
 - [LinkedIn](https://www.linkedin.com/in/kevin-christopher-7537007a/)
-- [Personal Website](https://coding-corps.github.io/CodingCompass/)
+- [Personal Website](https://kev-n-dev.github.io/CodingCompass/)
 
 ## License
 
-This repository is licensed under the [Creative Commons Attribution CC0 1.0 Universal](https://github.com/coding-corps/CodingCompass?tab=CC0-1.0-1-ov-file#readme).
+This repository is licensed under the [Creative Commons Attribution CC0 1.0 Universal](https://github.com/kev-n-dev/CodingCompass?tab=CC0-1.0-1-ov-file#readme).

@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react-swc'
 export default defineConfig({
   plugins: [react()],
   assetsInclude: ["**/*.md"],
-  homepage: "https://coding-corps.github.io/CodingCompass/",
+  homepage: "https://kev-n-dev.github.io/CodingCompass/",
   base: '/CodingCompass/',
   build: {
     rollupOptions: {
